@@ -1,0 +1,102 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ROGTi</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+ <body>    
+    <div class="container-md mt-3 border">
+    	<div class="row">
+    		<u><h1><label>Funcionário:@{{ user.get_username }}</label></h1>
+       
+       <h1>{{ user.get_full_name }}</h1>
+
+       
+   </div>
+
+  <form method="post" id="frequencia_form" novalidate>{% csrf_token %}
+  	<input type="hidden" name="csrfmiddlewaretoken" value="wzc8Sdf4HjxVNHIWvDcPDu2TTB0qF0zfVbmX0HFsYlFBUusBn7SslFsS9KR1ScxO">
+           <div class="form-row">
+
+  		<div class="form-group col-md-2">
+        <label>Hora de entrada:</label>
+          <input class="form-control" name="hora_ponto" id="id_hora_ponto" type="time">
+      </div>
+      <div class="form-group col-md-2">
+        <label>Hora da saida:</label>
+          <input class="form-control" name="hora_saida_ponto" id="id_hora_saida_ponto" type="time">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Tipo ponto:</label>
+           	<select name="tipo_ponto" id="id_tipo_ponto">
+  <option value="" selected>---------</option>
+
+  <option value="1">HOME OFFICE</option>
+
+  <option value="2">EXTERNO</option>
+
+  <option value="3">INTERNO</option>
+
+  <option value="4">NÃO PADRÃO</option>
+
+</select>
+
+      <div class="form-group col-md-10"> 
+       <label>Status ponto:</label>
+       	<select name="status_ponto" id="id_status_ponto">
+  <option value="" selected>---------</option>
+
+  <option value="1">NORMAL</option>
+
+  <option value="2">ATRASO</option>
+
+  <option value="3">FORA DO NORMAL</option>
+
+</select>
+</div>
+</div>    
+          <div class="form-group col-md-8">
+        <label for="comentarios">Justificativa:</label>
+          <textarea class="form-control" rows="8" name="juntificativa" id="id_juntificativa"></textarea>
+        </div>
+        </div>  
+
+
+          <button class="btn btn-outline-primary" type="submit">Enviar Cadastro</button>
+        </form>
+
+
+    </div>
+
+
+        <h4><div id="data-hora"></div><h4>
+
+        <script>
+      // Função para formatar 1 em 01
+      const zeroFill = n => {
+        return ('0' + n).slice(-2);
+      }
+
+      // Cria intervalo
+      const interval = setInterval(() => {
+        // Pega o horário atual
+        const now = new Date();
+
+        // Formata a data conforme dd/mm/aaaa hh:ii:ss
+        const dataHora = zeroFill(now.getUTCDate()) + '/' + zeroFill((now.getMonth() + 1)) + '/' + now.getFullYear() + ' ' + zeroFill(now.getHours()) + ':' + zeroFill(now.getMinutes()) + ':' + zeroFill(now.getSeconds());
+
+        // Exibe na tela usando a div#data-hora
+        document.getElementById('data-hora').innerHTML = dataHora;
+      }, 1000);
+    </script>
+
+    </body>
+</html> 

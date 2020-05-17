@@ -1,0 +1,194 @@
+{% if user.is_authenticated %}
+    <head>
+        <title>Frequência</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    </head>
+    <body>
+        {% for frequencia in frequencias %}
+            {% if frequencia.funcionario.usuario == user %}
+            <div id="content" class="colM">
+        
+        <h1>Adicionar frequencia</h1>
+        <div id="content-main">
+
+
+
+<fieldset class="module aligned ">
+    
+    
+    
+        <div class="form-row field-hora_ponto">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_hora_ponto">Hora de entrada 1:</label>
+                        
+                            <input type="text" name="hora_ponto" class="vTimeField" size="8" id="id_hora_ponto">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-hora_saida_ponto">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_hora_saida_ponto">Hora da saida 1:</label>
+                        
+                            <input type="text" name="hora_saida_ponto" class="vTimeField" size="8" id="id_hora_saida_ponto">
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-juntificativa">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_juntificativa">Juntificativa:</label>
+                        
+                            <textarea name="juntificativa" cols="40" rows="10" class="vLargeTextField" id="id_juntificativa">
+</textarea>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-tipo_ponto">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_tipo_ponto">Tipo ponto:</label>
+                        
+                            <div class="related-widget-wrapper">
+    <select name="tipo_ponto" id="id_tipo_ponto">
+  <option value="" selected>---------</option>
+
+</select>
+    
+        <a class="related-widget-wrapper-link change-related" id="change_id_tipo_ponto"
+            data-href-template="/admin/app_frequencia/tipobatidaponto/__fk__/change/?_to_field=id&amp;_popup=1"
+            title="Alterar tipo batida ponto selecionado"><img src="/static/admin/img/icon-changelink.svg" alt="Modificar"></a><a class="related-widget-wrapper-link add-related" id="add_id_tipo_ponto"
+            href="/admin/app_frequencia/tipobatidaponto/add/?_to_field=id&amp;_popup=1"
+            title="Adicionar outro tipo batida ponto"><img src="/static/admin/img/icon-addlink.svg" alt="Adicionar"></a><a class="related-widget-wrapper-link delete-related" id="delete_id_tipo_ponto"
+            data-href-template="/admin/app_frequencia/tipobatidaponto/__fk__/delete/?_to_field=id&amp;_popup=1"
+            title="Excluir tipo batida ponto selecionado"><img src="/static/admin/img/icon-deletelink.svg" alt="Apagar"></a>
+    
+</div>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-status_ponto">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_status_ponto">Status ponto:</label>
+                        
+                            <div class="related-widget-wrapper">
+    <select name="status_ponto" id="id_status_ponto">
+  <option value="" selected>---------</option>
+
+</select>
+    
+        <a class="related-widget-wrapper-link change-related" id="change_id_status_ponto"
+            data-href-template="/admin/app_frequencia/statusponto/__fk__/change/?_to_field=id&amp;_popup=1"
+            title="Alterar status ponto selecionado"><img src="/static/admin/img/icon-changelink.svg" alt="Modificar"></a><a class="related-widget-wrapper-link add-related" id="add_id_status_ponto"
+            href="/admin/app_frequencia/statusponto/add/?_to_field=id&amp;_popup=1"
+            title="Adicionar outro status ponto"><img src="/static/admin/img/icon-addlink.svg" alt="Adicionar"></a><a class="related-widget-wrapper-link delete-related" id="delete_id_status_ponto"
+            data-href-template="/admin/app_frequencia/statusponto/__fk__/delete/?_to_field=id&amp;_popup=1"
+            title="Excluir status ponto selecionado"><img src="/static/admin/img/icon-deletelink.svg" alt="Apagar"></a>
+    
+</div>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-funcionario">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_funcionario">Funcionário:</label>
+                        
+                            <div class="related-widget-wrapper">
+    <select name="funcionario" id="id_funcionario">
+  <option value="" selected>---------</option>
+
+</select>
+    
+        <a class="related-widget-wrapper-link change-related" id="change_id_funcionario"
+            data-href-template="/admin/app_frequencia/funcionario/__fk__/change/?_to_field=id&amp;_popup=1"
+            title="Alterar funcionario selecionado"><img src="/static/admin/img/icon-changelink.svg" alt="Modificar"></a><a class="related-widget-wrapper-link add-related" id="add_id_funcionario"
+            href="/admin/app_frequencia/funcionario/add/?_to_field=id&amp;_popup=1"
+            title="Adicionar outro funcionario"><img src="/static/admin/img/icon-addlink.svg" alt="Adicionar"></a><a class="related-widget-wrapper-link delete-related" id="delete_id_funcionario"
+            data-href-template="/admin/app_frequencia/funcionario/__fk__/delete/?_to_field=id&amp;_popup=1"
+            title="Excluir funcionario selecionado"><img src="/static/admin/img/icon-deletelink.svg" alt="Apagar"></a>
+    
+</div>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+</fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="submit-row">
+
+<input type="submit" value="Salvar" class="default" name="_save">
+
+
+<input type="submit" value="Salvar e adicionar outro(a)" name="_addanother">
+<input type="submit" value="Salvar e continuar editando" name="_continue">
+
+
+</div>
+
+
+
+
+  
+            {% endif %}
+        {% endfor %}
+        
+        <span class="sair"><a href="{% url 'logout' %}">Sair</a></span>
+    </body>
+{% endif %}

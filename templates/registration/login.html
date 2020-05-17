@@ -1,0 +1,86 @@
+{% extends "registration/registration_base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}{% trans "Log in" %}{% endblock %}
+
+{% block content %}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+
+<div class="row">
+    <aside class="col-sm-4">
+<div class="card">
+<article class="card-body">
+<a href="" class="float-right btn btn-outline-primary">Inscrever-se</a>
+<h4 class="card-title mb-4 mt-1">Registre-se</h4>
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="id_username" class="requiredField">Usuario</label>
+        <input name="username" class="form-control" required id="id_username" type="text">
+    </div> <!-- form-group// -->
+    <div class="form-group">
+        <a class="float-right" href="#"></a>
+        <label for="password" class="requiredField">Senha</label>
+        <input name="password" class="form-control" required id="id_password" type="password">
+    </div> <!-- form-group// --> 
+    <div class="form-group"> 
+    <div class="checkbox">
+      <label> <input type="checkbox"> Salvar senha </label>
+    </div> <!-- checkbox .// -->
+    </div> <!-- form-group// -->  
+    <div class="form-group">
+        <input type="hidden" name="next" value="{{ next }}" />
+        <button type="submit" class="btn btn-primary btn-block"> Login  </button>
+    </div> <!-- form-group// -->  
+                                                             
+</form>
+</article>
+</div> <!-- card.// -->
+
+    </aside> 
+
+{% endblock %}
+</div>
+</div>
+</div>
+
+{% comment %}
+**registration/login.html**
+
+It's your responsibility to provide the login form in a template called
+registration/login.html by default. This template gets passed four
+template context variables:
+
+``form``
+    A Form object representing the login form. See the forms
+    documentation for more on Form objects.
+
+``next``
+    The URL to redirect to after successful login. This may contain a
+    query string, too.
+
+``site``
+    The current Site, according to the SITE_ID setting. If you don't
+    have the site framework installed, this will be set to an instance
+    of RequestSite, which derives the site name and domain from the
+    current HttpRequest.
+
+``site_name``
+    An alias for site.name. If you don't have the site framework
+    installed, this will be set to the value of
+    request.META['SERVER_NAME']. For more on sites, see The
+    "sites" framework.
+{% endcomment %}
