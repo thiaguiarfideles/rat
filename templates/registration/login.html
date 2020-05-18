@@ -1,30 +1,70 @@
-{% extends "registration/registration_base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
 {% load i18n %}
 {% load crispy_forms_tags %}
 
+<style>
+.container {
+     width: 80%;
+        margin: 0 auto;
+        padding: 70px;
+    background-color: white;
+}
 
-{% block title %}{% trans "Log in" %}{% endblock %}
+.img {
+  width: 50%;
+  height: auto;
+}
 
-{% block content %}
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+.container:hover .overlay {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+</style>
+
+</head>
+<body>
+
+
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-
-
-<div class="row">
-    <aside class="col-sm-4">
-<div class="card">
+<div class="container">
+  <div class="col-sm-8">
+      
+    <div class="card" style="width:320px">
+<div class="global-container">
+    <div class="card login-form">
 <article class="card-body">
 <a href="" class="float-right btn btn-outline-primary">Inscrever-se</a>
-<h4 class="card-title mb-4 mt-1">Registre-se</h4>
 <form method="post">
     {% csrf_token %}
     <div class="form-group">
@@ -49,14 +89,26 @@
 </form>
 </article>
 </div> <!-- card.// -->
+</div>
 
-    </aside> 
-
+</div>
+</div>
+</div>
+</head>
+</body>
 {% endblock %}
-</div>
-</div>
-</div>
 
+
+
+<div id="page-footer">
+    <div class="container">
+
+      <footer class="container-fluid bg-1 text-center">
+       <p>Visite o site <a href="https://www.rogti.com.br">www.rogti.com.br</a></p>
+      </footer>
+    </div>
+
+  </div>
 {% comment %}
 **registration/login.html**
 

@@ -2,13 +2,15 @@
 <html>
 <head>
 <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  
+
 {% extends "base.html" %}
+
+
 {% block title %}ROGTI{% endblock %}
 
 <style>
@@ -86,9 +88,9 @@
     </div> <!-- /.container -->
     </div> <!-- /.container -->
 
-<a href="https://www.imagemhost.com.br/image/5jz5P"><img src="https://www.imagemhost.com.br/images/2020/05/15/logo.md.png" alt="logo.png" border="0" /></a>
-    <div class="row">
-      <div class="form-group col-md-4">
+<a href=""><img src="https://www.imagemhost.com.br/images/2020/05/15/logo.md.png" alt="logo.png" border="0" /></a>
+<div class="row">
+  <div class="col-sm-4">
       
     <div class="card" style="width:320px">
       <div class="card-body text-center">
@@ -101,13 +103,13 @@
   </div>
 </div>
     {% if user.is_authenticated %}
-    <div class="form-group col-md-4">
+    <div class="col-sm-4">
     <div class="card" style="width:320px">
       <div class="card-body text-center">
     <a href="https://www.imagemhost.com.br/image/5jGmM"><img src="https://www.imagemhost.com.br/images/2020/05/15/logo_ponto.th.png" alt="logo_ponto.png" border="0" /></a>
       <h5 class="card-title">Controle de Ponto</h5>
       <p class="card-text">Visualize em tempo real as ocorrências do ponto, controle de horas extras. Confira todas as informações da jornada de forma rápida e prática</p>
-      <a href="http://127.0.0.1:8080/app_frequencia/" target="_blank" class="btn btn-primary stretched-link"></a>
+      <a href="http://rogti.herokuapp.com/app_frequencia/" target="_blank" class="btn btn-primary stretched-link"></a>
       <p class="card-text"><small class="text-muted">Clique aqui e registre sua frequência</small></p>
     </div>
   </div>
@@ -118,36 +120,21 @@
      </li>
      {% endif %}
         {% if user.is_authenticated %}
-<div class="form-group col-md-2">
+<div class="col-sm-4">
     <div class="card" style="width:320px">
       <div class="card-body text-center">
   <a href="https://www.imagemhost.com.br/image/5xy8q"><img src="https://www.imagemhost.com.br/images/2020/05/15/logo_prancheta.th.png" alt="logo_prancheta.png"  border="0" /></a>
       <h5 class="card-title">RAT</h5>
       <p class="card-text">Registro e gerênciamento de atividades técnicas</p>
-      <a href="http://127.0.0.1:8080/rat_s/" target="_blank" class="btn btn-primary stretched-link"></a>
+      <a href="http://rogti.herokuapp.com/rat_s/" target="_blank" class="btn btn-primary stretched-link"></a>
       <p class="card-text"><small class="text-muted">Clique aqui e registre sua rat</small></p>
     </div>
   </div>
 </div>
+
    {% else %}
      {% endif %}
 
-
-<script>
-var delayInMilliseconds = 500; // half a second
-
-setTimeout(function() { 
-
-   var iframe = document.getElementsByTagName('iframe')[0];
-   iframe.style.background = 'white';
-   iframe.contentWindow.document.body.style.backgroundColor = 'white';
-
-}, delayInMilliseconds);
-</script>
-
-
-
- 
 {% endblock content %}
 
 </head>

@@ -131,7 +131,9 @@ MEDIA_URL = "/media/"
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 django_heroku.settings(locals())
 
-LOGIN_REDIRECT_URL = 'frequencia'
-LOGOUT_REDIRECT_URL = '/admin'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/accounts/login'
+
+CRISPY_TEMPLATE_PACK = 'uni_form'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
