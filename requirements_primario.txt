@@ -7,7 +7,7 @@ confusable-homoglyphs==3.2.0
 constantly==15.1.0
 cryptography==2.9.2
 dj-database-url==0.5.0
-Django==3.0.6
+Django==3.1.9
 django-ckeditor==5.9.0
 django-crispy-forms==1.9.0
 django-etc==0.10.0
